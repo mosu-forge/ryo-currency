@@ -51,7 +51,7 @@ static std::string generate_log_filename(const char *base)
 	time_t now = time(NULL);
 	if
 #ifdef WIN32
-		(!gmtime_s(&tm, &now))
+		(gmtime_s(&tm, &now))
 #else
 		(!gmtime_r(&now, &tm))
 #endif
